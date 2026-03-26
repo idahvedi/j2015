@@ -232,7 +232,10 @@
   </div>
 
   <div class="card player-detail" id="playerDetail">
-    <div class="card-title">&#x1F464; Detaljer for spiller</div>
+    <div class="card-title" style="justify-content:space-between;">
+      <span>&#x1F464; Detaljer for spiller</span>
+      <button onclick="clearSelection()" style="background:none;border:none;cursor:pointer;font-size:1.2rem;color:#a0aec0;line-height:1;" title="Lukk">&times;</button>
+    </div>
     <div class="detail-header">
       <div class="detail-avatar" id="detailAvatar"></div>
       <div>
@@ -377,9 +380,13 @@ function renderRanking() {
       '</div></td>';
 
     tr.addEventListener('click', function() {
-      selectedPlayer = p;
-      renderRanking();
-      showPlayerDetail(p);
+      if (selectedPlayer && selectedPlayer.name === p.name) {
+        clearSelection();
+      } else {
+        selectedPlayer = p;
+        renderRanking();
+        showPlayerDetail(p);
+      }
     });
     tbody.appendChild(tr);
   });
@@ -473,6 +480,14 @@ function showPlayerDetail(player) {
     monthEl.appendChild(sessionsEl);
     grid.appendChild(monthEl);
   });
+}
+
+function clearSelection() {
+  selectedPlayer = null;
+  document.getElementById('playerDetail').classList.remove('visible');
+  document.getElementById('searchInput').value = '';
+  searchQuery = '';
+  renderRanking();
 }
 
 // Sort header click handlers
