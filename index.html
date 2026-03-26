@@ -150,12 +150,42 @@
   .autocomplete-item mark { background: none; color: #2b6cb0; font-weight: 700; }
   .autocomplete-no-results { padding: 10px 14px; font-size: 0.85rem; color: #a0aec0; }
 
-  @media (max-width: 600px) {
-    .header { padding: 16px; }
-    .header h1 { font-size: 1.2rem; }
+  @media (max-width: 640px) {
+    .header { padding: 14px 16px; gap: 10px; }
+    .header-icon { font-size: 1.8rem; }
+    .header h1 { font-size: 1.1rem; }
+    .header p { font-size: 0.8rem; }
+
     .container { padding: 12px; }
-    .filter-group input { min-width: unset; width: 100%; }
+
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
+    .stat-card { padding: 14px 10px; }
+    .stat-value { font-size: 1.5rem; }
+    .stat-label { font-size: 0.7rem; }
+
+    .card { padding: 16px; border-radius: 10px; margin-bottom: 16px; }
+
+    .filters { flex-direction: column; gap: 12px; }
+    .filter-group { width: 100%; }
+    .autocomplete-wrap { min-width: unset; width: 100%; }
+    .autocomplete-wrap input { min-width: unset; width: 100%; font-size: 1rem; padding: 10px 32px 10px 12px; }
+    .type-filters { gap: 6px; }
+    .type-chip { font-size: 0.75rem; padding: 5px 10px; }
+
     .ranking-table th:nth-child(4), .ranking-table td:nth-child(4) { display: none; }
+    .ranking-table th:nth-child(5), .ranking-table td:nth-child(5) { display: none; }
+    .ranking-table th { padding: 8px; font-size: 0.7rem; }
+    .ranking-table td { padding: 10px 8px; }
+    .attended-count { font-size: 0.95rem; }
+    .rank-badge { width: 24px; height: 24px; font-size: 0.75rem; }
+
+    .detail-header { gap: 12px; }
+    .detail-avatar { width: 44px; height: 44px; font-size: 1.1rem; }
+    .detail-name { font-size: 1.1rem; }
+    .detail-meta { flex-direction: column; gap: 4px; }
+
+    .session-chip { min-width: unset; width: 100%; }
+    .cal-sessions { flex-direction: column; }
   }
 </style>
 </head>
